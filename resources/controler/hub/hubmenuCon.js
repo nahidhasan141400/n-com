@@ -5,7 +5,6 @@ function hubmenu (){
      async get(req,res){
          try {
              let menus = await Menu.find();
-             res.setHeader('Content-Security-Policy',"default-src 'self")
              res.render('./hub/menuhub',{menus});
              // res.send(menus)
          } catch (error) {
