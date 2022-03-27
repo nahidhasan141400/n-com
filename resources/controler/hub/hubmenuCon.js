@@ -5,8 +5,8 @@ function hubmenu (){
      async get(req,res){
          try {
              let menus = await Menu.find();
-             // res.render('./hub/menuhub',{menus});
-             res.send(menus)
+             res.render('./hub/menuhub',{menus});
+             // res.send(menus)
          } catch (error) {
              
              res.send("server dont data")
