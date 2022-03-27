@@ -1,1 +1,102 @@
-<div>nahod hasan sagar</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="../src/css/hubstyle.css" />
+    <title>burger hub</title>
+  </head>
+  <body>
+    <header>
+      <section class="header">
+        <img src="../img/logo.png" alt="" />
+        <div class="nav">
+          <a href="/n-com/logout">
+            <span><ion-icon name="exit"></ion-icon></span>logout
+          </a>
+        </div>
+      </section>
+    </header>
+    <section class="body">
+      <nav>
+        <ol>
+          <li>
+            <a href="/n-com/order"><ion-icon name="clipboard"></ion-icon></a>
+          </li>
+          <li>
+            <a href="/n-com/menu"
+              ><ion-icon name="add-circle-outline"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="/n-com/userreg"><ion-icon name="person-add"></ion-icon></a>
+          </li>
+          <li>
+            <a href="/n-com/alluser"><ion-icon name="contacts"></ion-icon></a>
+          </li>
+          <li>
+            <a href="#"><ion-icon name="nuclear"></ion-icon></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="cotent-body">
+        <div class="product-details">
+          <div class="pro-head">
+            <h1>
+              <span><ion-icon name="today"></ion-icon></span>Product <%=
+              menus.length %>
+            </h1>
+            <a href="/n-com/addpro"
+              ><span><ion-icon name="add-circle"></ion-icon></span>add
+              product</a
+            >
+          </div>
+          <!-- pro-head end -->
+          <div class="pro-list">
+            <!-- singel product start -->
+            <% menus.forEach((pro)=>{ %>
+            <div class="singel-pro">
+              <div class="img">
+                <img src="<%= pro.img %>" alt="" />
+              </div>
+              <div class="detais-oi">
+                <p><%= pro._id %></p>
+                <p><%= pro.name %></p>
+                <p><%= pro.price %> tk</p>
+                <div class=" <%= pro.active? 'ac-pro' : 'dac-pro' %>">
+                  <ion-icon
+                    name="<%= pro.active? 'laptop' : 'warning' %>"
+                  ></ion-icon
+                  ><%= pro.active? "active" : "deactive" %>
+                </div>
+              </div>
+              <div class="pro-option">
+                <!-- laptop -->
+                <a href="/n-com/pro/status/<%= pro._id %>"
+                  ><span
+                    ><ion-icon
+                      name="<%= pro.active? 'warning' : 'laptop' %>"
+                    ></ion-icon></span
+                  ><%= pro.active?"deactive" : "active" %></a
+                >
+                <a href="/n-com/pro/delete/<%= pro._id %>"
+                  ><span><ion-icon name="trash"></ion-icon></span>dellet</a
+                >
+                <a href="/n-com/pro/update/<%= pro._id %>"
+                  ><span><ion-icon name="cloud-upload"></ion-icon></span
+                  >update</a
+                >
+              </div>
+            </div>
+            <!-- singel pro end -->
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

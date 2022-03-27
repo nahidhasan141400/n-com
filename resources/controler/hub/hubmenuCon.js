@@ -4,7 +4,7 @@ function hubmenu (){
  return {
      get(req,res){
         Menu.find().then((result)=>{
-            res.render('login')
+            res.send(result)
         }).catch((err)=>{
             res.send(err);
         });
