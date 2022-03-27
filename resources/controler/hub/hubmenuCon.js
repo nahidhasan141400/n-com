@@ -4,11 +4,11 @@ function hubmenu (){
  return {
      async get(req,res){
          try {
-             let menus = await Menu.find({});
+             let menus = await Menu.find();
              res.render('./hub/menuhub',{menus});
          } catch (error) {
              console.log(error);
-             res.send(error)
+             res.send(error + "in form")
          }
      },
      async status(req,res){
