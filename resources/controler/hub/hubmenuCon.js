@@ -3,13 +3,12 @@ const Menu = require('../../models/menu');
 function hubmenu (){
  return {
      async get(req,res){
-            return res.send('nahid hasan sagar')
          try {
              let menus = await Menu.find();
              res.render('./hub/menuhub',{menus});
          } catch (error) {
-             console.log(error);
-             res.send(error + "in form")
+             
+             res.send("server dont data")
          }
      },
      async status(req,res){
