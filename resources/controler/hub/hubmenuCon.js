@@ -2,16 +2,12 @@ const Menu = require('../../models/menu');
 
 function hubmenu (){
  return {
-     async get(req,res){
-         try {
-             let menus = await Menu.find();
-             // res.render('./hub/menuhub',{menus});
-             // res.send(menus)
-             res.render('./hub/updatepro',{})
-         } catch (error) {
-             
-             res.send("server dont data")
-         }
+     get(req,res){
+        Menu.find().then((result)=>{
+            res.send(result);
+        }).catch((err)=>{
+            res.send(err);
+        });
      },
      async status(req,res){
          try {
