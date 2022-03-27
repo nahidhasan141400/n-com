@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>shop</title>
+  </head>
+  <body>
+    <header>
+      <div id="br">
+        <div class="aci"></div>
+        <div class="aci"></div>
+        <div class="aci" id="blur-drop"></div>
+      </div>
+      <nav>
+        <ol>
+          <li>
+            <a href="/menu">
+              <img src="img/home.png" alt="" />
+              <span>menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cart">
+              <img src="img/cart-b.png" alt="" />
+              <span>cart <span id="tc">0</span></span>
+            </a>
+          </li>
+          <li>
+            <a id="ac" href="/account">
+              <img src="img/user.png" alt="" />
+              <span>account</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+
+    <section class="order">
+      <div class="order-display">
+        <% data.forEach(order=>{ %>
+
+        <div class="singel">
+          <h2><a href="order/<%= order._id %>"><%= order._id %></a></h2>
+          <h1><%= order.status %></h1>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+    <script src="./src/js/addCart.js"></script>
+  </body>
+</html>

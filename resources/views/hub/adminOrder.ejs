@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="../src/css/hubstyle.css" />
+    <script src="../socket.io/socket.io.js"></script>
+    <title>burger hub</title>
+  </head>
+  <body>
+    <header>
+      <section class="header">
+        <img src="../img/logo.png" alt="" />
+        <div class="nav">
+          <a href="/n-com/logout">
+            <span><ion-icon name="exit"></ion-icon></span>logout
+          </a>
+        </div>
+      </section>
+    </header>
+    <section class="body">
+      <nav>
+        <ol>
+          <li>
+            <a href="/n-com/order"><ion-icon name="clipboard"></ion-icon></a>
+          </li>
+          <li>
+            <a href="/n-com/menu"
+              ><ion-icon name="add-circle-outline"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="/n-com/userreg"><ion-icon name="person-add"></ion-icon></a>
+          </li>
+          <li>
+            <a href="/n-com/alluser"><ion-icon name="contacts"></ion-icon></a>
+          </li>
+          <li>
+            <a href="#"><ion-icon name="nuclear"></ion-icon></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="cotent-body">
+        <div class="orders">
+          <div class="titel">
+            <h1>
+              <span><ion-icon name="pizza"></ion-icon></span> Orders <%= data.length %>
+            </h1>
+          </div>
+          <div class="order-list">
+            <% data.forEach((order)=>{ %>
+            <div class="item">
+              <div class="user-details">
+                <h4><%= order._id %></h4>
+                <%let nameq; if(order.customerId){nameq = order.customerId.name;} else {nameq ='wrong' ;}%>
+                <p><%= nameq%></p>
+                <p><%= order.phone %></p>
+                <p><%= order.address %>:<%= order.zone %></p>
+              </div>
+              <div class="order-item">
+                <% let item = Object.entries(order.items.items);
+                item.forEach((it)=>{ %>
+
+                <div class="si">
+                  <span>
+                    <%= it[1].name %>
+                  </span>
+                  <span><%= it[1].qnt %>ps</span>
+                </div>
+                <% }) %>
+              </div>
+              <div class="conferm">
+                <h2>tottal:<%= order.items.totalp %> tk</h2>
+                <select name="order-status" data-id="<%= order._id %>" class="ordwer-status">
+                  <option <%= order.status == "order placed" ? "selected":'' %> value="order placed">order placed</option>
+                  <option <%= order.status=="conferm" ? "selected":'' %> value="conferm">conferm</option>
+                  <option  <%= order.status == "deliverd" ? "selected":'' %>  value="deliverd">deliverd</option>
+                  <option <%= order.status == "complete" ? "selected":'' %>  value="complete">complet</option>
+                  <option <%= order.status == "cencel" ? "selected":'' %>  value="cencel">cencel</option>
+                </select>
+              </div>
+            </div>
+            <% }) %>
+            <!-- ietems start-->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="../src/js/hubmenu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>shop</title>
+  </head>
+  <body>
+    <header>
+      <div id="br">
+        <div class="aci"></div>
+        <div class="aci" id="blur-drop"></div>
+        <div class="aci"></div>
+      </div>
+      <nav>
+        <ol>
+          <li>
+            <a href="/menu">
+              <img src="img/home.png" alt="" />
+              <span>menu</span>
+            </a>
+          </li>
+          <li>
+            <a id="ac" href="#">
+              <img src="img/cart-b.png" alt="" />
+              <span>cart</span>
+            </a>
+          </li>
+          <li>
+            <a href="/account">
+              <img src="img/user.png" alt="" />
+              <span>account</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <section class="empyty">
+      <div>
+        <h1>cart is empty</h1>
+        <p>add something in cart</p>
+        <img src="img/empty-cart.png" alt="" />
+        <a href="/menu">go to menu</a>
+      </div>
+    </section>
+
+    <section class="cart-items">
+      <div class="cart-titel">
+        <h1>Items List</h1>
+        <button onclick="clearloc()">clear cart</button>
+      </div>
+
+      <div class="items-list">
+        <!-- //item -->
+      </div>
+      <!-- item list -->
+      <div class="total">
+        <h1>delivary charge:<span>10 tk</span></h1>
+        <h1>total:<span id="totalPrice"></span>Tk</h1>
+      </div>
+      <!-- total -->
+      <div class="order-form">
+        <form action="/order" method="post">
+          <input placeholder="phone " type="number" name="phone" id="" />
+          <br />
+          <input type="hidden" id="dataF" value="" />
+          <span>adress</span>
+          <select name="address" aria-placeholder="zoon" class="textfield05">
+            <option value="">adress</option>
+            <option value="hapaniya">hapaniya</option>
+            <option value="khaguriya">khaguriya</option>
+          </select>
+          <span>zone</span>
+          <select name="zone" aria-placeholder="zoon" class="textfield05">
+            <option value="">zone</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <button type="submit">order</button>
+        </form>
+      </div>
+    </section>
+    <script src="./src/js/wsoCart.js"></script>
+  </body>
+</html>

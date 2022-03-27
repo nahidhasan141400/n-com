@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>shop</title>
+  </head>
+  <body>
+    <header>
+      <div id="br">
+        <div class="aci"></div>
+        <div class="aci"></div>
+        <div class="aci" id="blur-drop"></div>
+      </div>
+      <nav>
+        <ol>
+          <li>
+            <a href="/menu">
+              <img src="img/home.png" alt="" />
+              <span>menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cart">
+              <img src="img/cart-b.png" alt="" />
+              <span>cart</span>
+            </a>
+          </li>
+          <li>
+            <a id="ac" href="/account">
+              <img src="img/user.png" alt="" />
+              <span>account</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <section class="setting">
+      <div class="seting-head">
+        <h1><span>#</span>setting</h1>
+      </div>
+      <div class="changPassword">
+        <form action="/cpassuser" method="post">
+          <h1>change password</h1>
+          <h1 style="color: red;font-size: 17px;font-style: italic;">
+            <%= msg %>
+          </h1>
+          <input name="password"password" placeholder="enter current password"
+          type="password" />
+          <input
+            name="npass"
+            type="password"
+            placeholder="enter new password"
+          />
+          <button>change</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

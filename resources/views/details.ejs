@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>shop</title>
+  </head>
+  <body>
+    <header>
+      <div id="br">
+        <div class="aci"></div>
+        <div class="aci"></div>
+        <div class="aci" id="blur-drop"></div>
+      </div>
+      <nav>
+        <ol>
+          <li>
+            <a href="/menu">
+              <img src="img/home.png" alt="" />
+              <span>menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cart">
+              <img src="img/cart-b.png" alt="" />
+              <span>cart</span>
+            </a>
+          </li>
+          <li>
+            <a id="ac" href="/account">
+              <img src="img/user.png" alt="" />
+              <span>account</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <section class="details">
+      <div class="head">
+        <h1><span>#</span>user details</h1>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td><%= name %></td>
+          </tr>
+          <tr>
+            <td>number</td>
+            <td>0<%= number %></td>
+          </tr>
+          <tr>
+            <td>address</td>
+            <td><%= address %></td>
+          </tr>
+          <tr>
+            <td>zone</td>
+            <td><%= zone %></td>
+          </tr>
+          <tr>
+            <td>ref</td>
+            <td><%= ref %></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="../src/css/hubstyle.css" />
+    <title>burger hub</title>
+  </head>
+  <body>
+    <header>
+      <section class="header">
+        <img src="../img/logo.png" alt="" />
+        <div class="nav">
+          <a href="/n-com/logout">
+            <span><ion-icon name="exit"></ion-icon></span>logout
+          </a>
+        </div>
+      </section>
+    </header>
+    <section class="body">
+      <nav>
+        <ol>
+          <li>
+            <a href="/n-com/order"><ion-icon name="clipboard"></ion-icon></a>
+          </li>
+          <li>
+            <a href="/n-com/menu"
+              ><ion-icon name="add-circle-outline"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="/n-com/userreg"><ion-icon name="person-add"></ion-icon></a>
+          </li>
+          <li>
+            <a href="/n-com/alluser"><ion-icon name="contacts"></ion-icon></a>
+          </li>
+          <li>
+            <a href="#"><ion-icon name="nuclear"></ion-icon></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="cotent-body">
+        <div class="product-details">
+          <div class="pro-head">
+            <h1>
+              <span><ion-icon name="today"></ion-icon></span>users <%=
+              data.length %>
+            </h1>
+            <form id="search-user-form" action="/n-com/serchUser" method="post">
+              <input
+                required
+                placeholder="search with number"
+                type="text"
+                name="number"
+                id=""
+              />
+              <button type="submit"><ion-icon name="send"></ion-icon></button>
+            </form>
+            <a href="/n-com/userreg"
+              ><span><ion-icon name="add-circle"></ion-icon></span>add user</a
+            >
+          </div>
+          <!-- pro-head end -->
+          <div class="pro-list">
+            <!-- singel product start -->
+            <% data.forEach((user)=>{ %>
+            <div class="singel-pro userlist">
+              <div class="img detais-oi">
+                <p><%= user._id %></p>
+                <p><%= user.name %></p>
+                <p>0<%= user.number %></p>
+                <p><%= user.ref %></p>
+              </div>
+              <div class="detais-oi">
+                <p>address: <%= user.address %></p>
+                <p>zone: <%= user.zone %></p>
+                <div class="ac-pro">
+                  <ion-icon name="laptop"></ion-icon>active
+                </div>
+              </div>
+              <div class="pro-option">
+                <!-- laptop -->
+                <a href="/n-com/user/block/<%= user._id %>"
+                  ><span><ion-icon name="close-circle-outline"></ion-icon></span
+                  >block</a
+                >
+                <a href="/n-com/user/delete/<%= user._id %>"
+                  ><span><ion-icon name="trash"></ion-icon></span>dellet</a
+                >
+                <a href="/n-com/user/update/<%= user._id %>"
+                  ><span><ion-icon name="cloud-upload"></ion-icon></span
+                  >update</a
+                >
+              </div>
+            </div>
+            <!-- singel pro end -->
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../src/js/hubmenu.js"></script>
+  </body>
+</html>

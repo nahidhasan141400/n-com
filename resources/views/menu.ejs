@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>shop</title>
+  </head>
+  <body>
+    <header>
+      <div id="br">
+        <div class="aci" id="blur-drop"></div>
+        <div class="aci"></div>
+        <div class="aci"></div>
+      </div>
+      <nav>
+        <ol>
+          <li>
+            <a id="ac" href="#">
+              <img src="img/home.png" alt="" />
+              <span>menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cart">
+              <img src="img/cart-b.png" alt="" />
+              <span>cart <span id="tc">0</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="/account">
+              <img src="img/user.png" alt="" />
+              <span>account</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <div class="product-display">
+      <!-- data -->
+      <% data.forEach((el) => { %>
+      <div class="show">
+        <div class="img-body"><img src="<%=el.img %>" alt="" /></div>
+        <h1>
+          <%=el.name %>
+        </h1>
+        <h2><%= el.price %><span>tk</span></h2>
+        <button class="p-btn" data-item="<%= JSON.stringify(el) %>">
+          add to cart
+        </button>
+      </div>
+      <% }); %>
+      <!-- data -->
+    </div>
+    <script src="./src/js/addCart.js"></script>
+  </body>
+</html>

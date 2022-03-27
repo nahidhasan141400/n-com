@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <title>user registration</title>
+  </head>
+  <body>
+    <div class="login-wrap" style="padding-bottom: 100px">
+      <div class="logo-login">
+        <h4>User Registar</h4>
+        <% if(msg){ %>
+        <h4 style="color: rgb(255, 19, 19);"><%= msg %></h4>
+        <% } %>
+      </div>
+      <form action="/n-com/userreg" method="post">
+        <!-- in -->
+        <label for="number"> number </label>
+        <input
+          placeholder="enter user number"
+          type="number"
+          name="number"
+          spellcheck="true"
+        />
+        <!-- in -->
+        <label for="number">name</label>
+        <input
+          placeholder="enter user name"
+          type="text"
+          name="name"
+          spellcheck="true"
+        />
+        <!-- in -->
+        <label for="number">address</label>
+        <select name="address" aria-placeholder="address" class="textfield05">
+          <option>enter user address</option>
+          <option value="hapaniya">hapaniya</option>
+          <option value="khaguriya">khaguriya</option>
+        </select>
+        <!-- im -->
+        <label for="number">zone</label>
+        <select name="zone" aria-placeholder="zone" class="textfield05">
+          <optionrs>enter user zone</optionrs>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+        <!-- in -->
+        <label for="refrench">refrenc</label>
+        <input placeholder="enter user refrench" type="text" name="refrench" />
+
+        <label for="password">password</label>
+        <input placeholder="----" id="pwd" type="password" name="password" />
+        <label for="password">enter agend key</label>
+        <input placeholder="----" id="pwd1" type="password" name="ajkey" />
+
+        <button type="submit">register</button>
+      </form>
+    </div>
+  </body>
+</html>

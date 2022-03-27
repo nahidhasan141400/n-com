@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>shop</title>
+  </head>
+  <body>
+    <header>
+      <div id="br">
+        <div class="aci"></div>
+        <div class="aci"></div>
+        <div class="aci" id="blur-drop"></div>
+      </div>
+      <nav>
+        <ol>
+          <li>
+            <a href="/menu">
+              <img src="img/home.png" alt="" />
+              <span>menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cart">
+              <img src="img/cart-b.png" alt="" />
+              <span>cart</span>
+            </a>
+          </li>
+          <li>
+            <a id="ac" href="#">
+              <img src="img/user.png" alt="" />
+              <span>account</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <section class="account">
+      <div class="baner">
+        <div class="blur">
+          <h1><%= name %></h1>
+          <h2>0<%= number %></h2>
+        </div>
+      </div>
+      <div class="options">
+        <a href="/details">details</a>
+        <a href="/order">orders</a>
+        <a href="/setting">setting</a>
+        <a href="/logout">logout</a>
+        <a href="#">contact</a>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>login</title>
+  </head>
+  <body>
+    <div class="login-wrap">
+      <div class="logo-login">
+        <img src="img/logo.png" alt="" />
+        <h4>login to get fresh food</h4>
+        <h4 style="color: red;"><%= msg ? msg : ""; %></h4>
+      </div>
+      <form action="/login" method="post">
+        <label for="number"> number </label>
+        <input
+          placeholder="enter your number"
+          type="number"
+          name="number"
+          spellcheck="true"
+        />
+        <label for="password">password</label>
+        <input placeholder="----" id="pwd" type="password" name="password" />
+        <button>login</button>
+      </form>
+      <div class="folo">
+        <p>Don't have account? plz call 01234567890</p>
+        <span>&copy;2022 NH softower. All rights reserved.</span>
+      </div>
+    </div>
+  </body>
+</html>
