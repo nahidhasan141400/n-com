@@ -2,13 +2,14 @@ let Order = require('../../models/order');
 let Menu = require('../../models/menu');
 
 function hubOreder(){
-    return {get(req,res){
-        Menu.find().then((result)=>{
-            res.status(200).render('./hub/menubHub',{result});
-        }).catch((err)=>{
-            res.send(err);
-        });
-     },
+    return {
+        getmenu(req,res){
+            Menu.find().then((result)=>{
+                res.status(200).render('./hub/menubHub',{result});
+            }).catch((err)=>{
+                res.send(err);
+            });
+        },
         async get(req,res){
             
             try {
