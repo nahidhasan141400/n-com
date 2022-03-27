@@ -2,12 +2,9 @@ const Menu = require('../../models/menu');
 
 function hubmenu (){
  return {
-     get(req,res){
-        Menu.find().then((result)=>{
-            res.status(200).render('./hub/menubHub',{result});
-        }).catch((err)=>{
-            res.send(err);
-        });
+     async get(req,res){
+        const data = await Menu.find({active: true});
+           res.render('./hub/menubHub',{data})
      },
      async status(req,res){
          try {
