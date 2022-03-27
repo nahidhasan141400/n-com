@@ -33,9 +33,9 @@ app.set('view engine', 'ejs')
 // route
 const route = require('./routes/allroutes');
 app.use('/',route);
-// app.get('*',(r,s)=>{
-//     s.redirect('/menu')
-// })
+app.get('*',(r,s)=>{
+    s.redirect('/menu')
+})
 const server = app.listen(PORT , () => {
             console.log(`Listening on port ${PORT}`)
         })
