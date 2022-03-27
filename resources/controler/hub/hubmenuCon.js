@@ -4,7 +4,7 @@ function hubmenu (){
  return {
      get(req,res){
         Menu.find().then((result)=>{
-            res.status(200).render('./hub/adminOrder',{});
+            res.status(200).render('./hub/menubHub',{result});
         }).catch((err)=>{
             res.send(err);
         });
