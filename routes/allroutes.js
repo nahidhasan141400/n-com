@@ -33,7 +33,8 @@ route.post('/n-com/setstatus',hublogin().auth,hubOreder().setstatus);
 // menu
 route.get('/n-com/addpro',hublogin().auth,hubmenu().addpro);
 route.post('/n-com/addpro',hublogin().auth,hubmenu().postaddpro);
-route.get('/n-com/menu',hublogin().auth,hubmenu().get);
+route.get('/n-com/menu',hublogin().auth,hubOreder().get);
+// route.get('/n-com/menu',hublogin().auth,hubmenu().get);
 route.post('/n-com/pro/update',hublogin().auth,hubmenu().postupdatepro);
 // menu param 
 route.get('/n-com/pro/status/:id',hublogin().auth,hubmenu().status)
