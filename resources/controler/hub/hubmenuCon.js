@@ -3,8 +3,8 @@ const Menu = require('../../models/menu');
 function hubmenu (){
  return {
      async get(req,res){
-        const data = await Menu.find({active: true});
-           res.render('./hub/menubHub',{data})
+        const menus = await Menu.find({});
+           res.render('./hub/menuHub',{menus})
      },
      async status(req,res){
          try {
